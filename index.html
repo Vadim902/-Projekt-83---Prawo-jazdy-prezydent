@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt</title>
+</head>
+<body>
+    <form>
+        <label for="rok">Podaj rok urodzenia: </label><br>
+        <input type="number" name="rok" id="rok"> 
+        <input type="button" id="sprawdz" value="Sprawdz" onclick="spr()">
+    </form>
+    <p id="wynik"></p>
+    <p id="prj"></p>
+    <script>
+        function spr() {
+            let rok = parseFloat(document.getElementById("rok").value);
+            let wiek = 2026 - rok;
+
+            if (wiek < 0) {
+            document.getElementById("prj").innerHTML = "Błąd wiek nie może być mniejszy od zera" + wiek;
+            } else if (wiek < 18) {
+            document.getElementById("wynik").innerHTML = "Masz/Będziesz miał tyle " + wiek + " lat.";
+            document.getElementById("prj").innerHTML = "Nie możesz mieć prawa jazdy i nie możesz być prezydentem";
+           } else if (wiek <= 35) {
+            document.getElementById("wynik").innerHTML = "Masz/Będziesz miał tyle " + wiek + " lat.";
+            document.getElementById("prj").innerHTML = "Możesz mieć prawa jazdy ale nie możesz być prezydentem";
+            } else {
+            document.getElementById("wynik").innerHTML = "Masz/Będziesz miał tyle " + wiek + " lat.";
+            document.getElementById("prj").innerHTML = "Możesz mieć prawa jazdy i możesz być prezydentem";
+            }
+        }
+           
+    </script>
+</body>
+</html>
